@@ -35,7 +35,10 @@ N2W_hash = {
 }
 
 class NumConverter
+
   class << self
+
+
     def converter(num)
       return "zero" if num == 0
       word_acc = []
@@ -46,7 +49,7 @@ class NumConverter
         skip_zero(digit_as_number) do
           if digit_count == 0
             word_acc << "#{N2W_hash[digit_as_number]}"
-          elsif teens_to_twenties?(digit_as_number, digit_42count)
+          elsif teens_to_twenties?(digit_as_number, digit_count)
             trace word_acc
             actual_number = Integer("#{digit}#{digit_reversed[index - 1]}")
             counter = (digit_count > 1 ? 10**(digit_count - 1) : nil)
@@ -97,9 +100,15 @@ class NumConverter
     def twenties_to_hundreds?(digit_count)
       (digit_count - 1) % 3 == 0
     end
-  end
+
+
+
+end
 end
 
+if __FILE__ == $0
+#puts NumConverter.converter(7)
 puts "Enter arabic num to converter to english phrase: "
 puts NumConverter.converter(gets.chomp)
+  end
 
