@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+#require 'active_support/all'
 N2W_hash = {
     1 => "one",
     2 => "two",
@@ -62,7 +63,8 @@ class NumConverter
             counter = (digit_count > 1 ? 10**(digit_count - 1) : nil)
             lookup_number = digit_as_number * 10
             word_rep = "#{N2W_hash[lookup_number]}"
-            word_rep += " #{N2W_hash[Integer(digit_reversed[index - 1])]}"
+            word_rep += "-" if Integer(digit_reversed[index - 1]) != 0
+            word_rep += " #{N2W_hash[Integer(digit_reversed[index - 1])]}".strip
             word_rep += " #{N2W_hash[counter]}" if counter
             word_rep += " and" if word_acc.size == 1
             word_acc << word_rep
@@ -106,9 +108,11 @@ class NumConverter
 end
 end
 
-if __FILE__ == $0
-#puts NumConverter.converter(7)
-puts "Enter arabic num to converter to english phrase: "
-puts NumConverter.converter(gets.chomp)
-  end
+puts NumConverter.converter(1999)
+
+#if __FILE__ == $0
+##
+#puts "Enter arabic num to converter to english phrase: "
+#puts NumConverter.converter(gets.chomp)
+#  end
 

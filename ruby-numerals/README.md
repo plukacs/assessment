@@ -20,5 +20,5 @@ For example:
 7    == seven
 42   == forty-two
 2001 == two thousand and one
-1999 == nineteen hundred and ninety-nine
+1999 == nineteen hundred and ninety-nine #Note: So I decided to use one thousand nine hundred and ninety-nine instead because I understand this better.
 </pre>
