@@ -108,11 +108,11 @@ class NumConverter
 end
 end
 
-puts NumConverter.converter(1999)
+#puts NumConverter.converter(1999)
 
-#if __FILE__ == $0
-##
-#puts "Enter arabic num to converter to english phrase: "
-#puts NumConverter.converter(gets.chomp)
-#  end
+if __FILE__ == $0
+
+puts "Enter arabic num to converter to english phrase: "
+puts NumConverter.converter(gets.chomp)
+  end
 
